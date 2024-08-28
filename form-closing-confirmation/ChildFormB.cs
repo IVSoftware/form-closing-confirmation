@@ -12,7 +12,12 @@ namespace form_closing_confirmation
 {
     public partial class ChildFormB : Form
     {
-        public ChildFormB() => InitializeComponent();
+        public ChildFormB()
+        {
+            InitializeComponent();
+            buttonClose.Click += (sender, e) => Close();
+            buttonExit.Click += (sender, e) => Application.Exit();
+        }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
